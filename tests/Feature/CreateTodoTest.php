@@ -37,9 +37,9 @@ class CreateTodoTest extends TestCase
     {
         $todo = factory(Todo::class)->create();
 
-        $this->put('/'. $plan->id, [
-            'Title' => 'NewName',
+        $this->put('/'. $todo->id, [
+            'title' => 'NewName',
         ]);
-        $this->assertEquals('NewName', $plan->fresh()->name);
+        $this->assertEquals('NewName', $todo->fresh()->title);
     }
 }
