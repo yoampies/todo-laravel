@@ -6,10 +6,12 @@
         <title>Ampizzella To-Do</title>
     </head>
     <body class="bg-blue-100">
+        <p class="bg-blue-300 text-white text-4xl text-center font-semibold pb-1 mb-6 m-auto">Ampizzella Laravel To-Do</p>
         <div class="w-full max-w-lg m-auto mt-6">
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-4 mb-4" method="POST" action="{{ action('TodoController@store') }}">
                 @csrf
                 <div class="mb-4">
+                    <p>hola</p>
                 <label class="block text-lg text-gray-600 text-sm font-bold mb-3 ml-24" for="title">
                     Write a title for your to-do!
                 </label>
@@ -30,6 +32,11 @@
                             @method('DELETE')
 
                             <button class="absolute top-0 right-0 inline-block bg-red-500 hover:bg-red-700 rounded py-1 px-3 mt-4 mr-6 text-white text-sm font-semibold" type="submit">Delete</button>
+
+                            @csrf
+                            @method('PUT')
+
+                            <button class="inline-block bg-red-500 hover:bg-red-700 rounded py-1 px-3 mt-4 mr-20 text-white text-sm font-semibold" type="submit">Delete2</button>
                         </form>
                     </div>
                     @endforeach

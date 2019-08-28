@@ -30,8 +30,7 @@ class TodoController extends Controller
         $todo->title = $request->input('title');
         $todo->save();
 
-        $todos = Todo::all();
-        return view('welcome', compact('todos'));
+        return redirect()->back();
     }
 
     /**
@@ -45,8 +44,7 @@ class TodoController extends Controller
         $todo = Todo::find($id);
         $todo->delete();
 
-        $todos = Todo::all();
-        return view('welcome', compact('todos'));
+        return redirect()->back();
     }
 
     /**
@@ -62,7 +60,6 @@ class TodoController extends Controller
         $todo = Todo::find($id);
         $todo->update($data);
 
-        $todos = Todo::all();
-        return view('welcome', compact('todos'));
+        return redirect()->back();
     }
 }
